@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSH 爆破记录</title>
+  <title>SSH Brute-force Logs</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
@@ -90,29 +90,29 @@
 <body>
 
   <div class="top-bar">
-    <div class="top-bar-title">SSH 爆破记录 (总数: {{ .TotalCount }})</div>
+    <div class="top-bar-title">SSH Brute-force Logs (Total: {{ .TotalCount }})</div>
     <div class="top-bar-links">
-      <a href="/api/ssh-toppasswords">高频密码</a>
-      <a href="/api/ssh-topasn">高频ASN</a>
-      <a href="/api/ssh-topips">高频IP</a>
-      <a href="/">返回首页</a>
+      <a href="/api/ssh-toppasswords">Top Passwords</a>|
+      <a href="/api/ssh-topasn">Top ASNs</a>|
+      <a href="/api/ssh-topips">Top IPs</a> |
+      <a href="/">Back to Home</a>
     </div>
   </div>
 
   <div class="container">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center mb-3">最近50次爆破</h5>
+        <h5 class="card-title text-center mb-3">Latest 50 Brute-force Attempts</h5>
 
         <div class="table-responsive">
           <table class="table table-bordered table-striped">
             <thead class="table-light">
               <tr>
-                <th>时间</th>
-                <th>IP 地址</th>
-                <th>归属地</th>
-                <th>用户名</th>
-                <th>密码</th>
+                <th>Time</th>
+                <th>IP Address</th>
+                <th>Location</th>
+                <th>Username</th>
+                <th>Password</th>
               </tr>
             </thead>
             <tbody>
@@ -127,7 +127,7 @@
                   </tr>
                 {{ end }}
               {{ else }}
-                <tr><td colspan="5">暂无记录</td></tr>
+                <tr><td colspan="5">No Record</td></tr>
               {{ end }}
             </tbody>
           </table>

@@ -46,13 +46,13 @@ func GetIPInfo(ipStr string) IPInfo {
 	// 地理位置
 	if geoDBCity != nil {
 		if record, err := geoDBCity.City(ip); err == nil {
-			country := record.Country.Names["zh-CN"]
+			country := record.Country.Names["en"]
 			city := ""
 			if len(record.Subdivisions) > 0 {
-				city = record.Subdivisions[0].Names["zh-CN"]
+				city = record.Subdivisions[0].Names["en"]
 			}
 			if city == "" {
-				city = record.City.Names["zh-CN"]
+				city = record.City.Names["en"]
 			}
 			info.Location = strings.TrimSpace(country + " " + city)
 		} else {
